@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rana's Nail Serum – Premium nail serum designed to strengthen, nourish, and restore your nails naturally.">
+<title>Rana's Nail Serum | Stronger, Healthier Nails</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rose: #C8A0A0;
+    --rose-light: #E8D0D0;
+    --blush: #F5EAE8;
+    --blush-deep: #EDD8D4;
+    --gold: #B8965A;
+    --gold-light: #D4B07A;
+    --gold-pale: #F0E6D0;
+    --cream: #FBF7F4;
+    --nude: #EDE0D8;
+    --white: #FFFFFF;
+    --charcoal: #2A2020;
+    --muted: #7A6060;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Jost', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  .display { font-family: var(--font-display); font-weight: 300; letter-spacing: -0.02em; line-height: 1.1; }
+  .eyebrow { font-family: var(--font-body); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+  .section-title { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 300; color: var(--charcoal); }
+  .gold-line { width: 50px; height: 1px; background: linear-gradient(90deg, var(--gold), transparent); margin: 16px 0; }
+
+  /* ── NAVBAR ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 5%;
+    background: rgba(251,247,244,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(184,150,90,0.15);
+    transition: padding 0.3s;
+  }
+  nav.scrolled { padding: 14px 5%; }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: var(--muted); transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 24px;
+    background: var(--charcoal);
+    color: var(--white);
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--charcoal);
+    transition: all 0.3s;
+  }
+  .nav-cta:hover { background: var(--gold); border-color: var(--gold); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 22px; height: 1px; background: var(--charcoal); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    background: linear-gradient(135deg, var(--cream) 60%, var(--blush) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  #hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200,160,160,0.12), transparent 70%);
+    pointer-events: none;
+  }
+  .hero-content {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 60px 5% 60px 8%;
+  }
+  .hero-content .eyebrow { margin-bottom: 20px; }
+  .hero-headline {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.08;
+    color: var(--charcoal);
+    margin-bottom: 24px;
+  }
+  .hero-headline em { font-style: italic; color: var(--gold); }
+  .hero-sub {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--muted);
+    max-width: 420px;
+    margin-bottom: 40px;
+  }
+  .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 16px 36px;
+    background: var(--charcoal);
+    color: var(--white);
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--charcoal);
+    transition: all 0.35s;
+    position: relative; overflow: hidden;
+  }
+  .btn-primary::after { content: '→'; transition: transform 0.3s; }
+  .btn-primary:hover { background: var(--gold); border-color: var(--gold); }
+  .btn-primary:hover::after { transform: translateX(4px); }
+  .btn-secondary {
+    display: inline-flex; align-items: center;
+    padding: 16px 36px;
+    background: transparent;
+    color: var(--charcoal);
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--rose);
+    transition: all 0.3s;
+  }
+  .btn-secondary:hover { background: var(--rose-light); }
+  .hero-stats {
+    display: flex; gap: 32px; margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(184,150,90,0.2);
+  }
+  .stat { display: flex; flex-direction: column; gap: 4px; }
+  .stat strong { font-family: var(--font-display); font-size: 2rem; font-weight: 400; color: var(--charcoal); }
+  .stat span { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .hero-image-side {
+    display: flex; align-items: center; justify-content: center;
+    position: relative; padding: 60px 8% 60px 20px;
+  }
+  .hero-img-main {
+    width: 100%; max-width: 420px; aspect-ratio: 3/4;
+    background: linear-gradient(160deg, var(--blush-deep), var(--nude));
+    border: 1px solid rgba(184,150,90,0.2);
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 12px;
+    position: relative;
+    box-shadow: 0 30px 80px rgba(42,32,32,0.12);
+  }
+  .hero-img-main img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+  .img-placeholder-label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-align: center; padding: 20px; }
+  .img-placeholder-icon { font-size: 2rem; opacity: 0.3; }
+  .hero-img-float {
+    position: absolute;
+    width: 140px; aspect-ratio: 1;
+    background: var(--white);
+    border: 1px solid rgba(184,150,90,0.25);
+    display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px;
+    box-shadow: 0 12px 40px rgba(42,32,32,0.1);
+    padding: 10px;
+  }
+  .hero-img-float.f1 { bottom: 80px; left: -40px; }
+  .hero-img-float.f2 { top: 100px; right: -20px; width: 110px; }
+  .hero-img-float img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* ── MARQUEE ── */
+  .marquee-strip {
+    background: var(--charcoal);
+    padding: 16px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-inner {
+    display: inline-flex; gap: 60px;
+    animation: marquee 18s linear infinite;
+  }
+  .marquee-inner span { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-light); }
+  .marquee-inner .dot { color: var(--rose); }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── SECTIONS GENERAL ── */
+  section { padding: 100px 5%; }
+  .section-header { text-align: center; margin-bottom: 64px; }
+  .section-header .gold-line { margin: 16px auto; }
+
+  /* ── FEATURED IMAGE GRID ── */
+  #featured { background: var(--white); }
+  .featured-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 12px;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .feat-main { grid-row: span 2; }
+  .feat-img {
+    width: 100%;
+    background: linear-gradient(135deg, var(--blush), var(--nude));
+    display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px;
+    border: 1px solid rgba(184,150,90,0.15);
+    cursor: pointer; overflow: hidden;
+    transition: transform 0.4s;
+    position: relative;
+  }
+  .feat-img:hover { transform: scale(1.02); }
+  .feat-img img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+  .feat-main { aspect-ratio: 3/4; }
+  .feat-img:not(.feat-main) { aspect-ratio: 4/3; }
+  .feat-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(42,32,32,0.3), transparent);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .feat-img:hover .feat-overlay { opacity: 1; }
+
+  /* ── BENEFITS ── */
+  #benefits { background: var(--cream); }
+  .benefits-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 1100px; margin: 0 auto; }
+  .benefit-card {
+    background: var(--white);
+    padding: 40px 28px;
+    border: 1px solid rgba(184,150,90,0.15);
+    text-align: center;
+    transition: all 0.35s;
+    position: relative; overflow: hidden;
+  }
+  .benefit-card::before {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    transform: scaleX(0); transition: transform 0.4s;
+  }
+  .benefit-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(42,32,32,0.08); }
+  .benefit-card:hover::before { transform: scaleX(1); }
+  .benefit-icon { font-size: 2.4rem; margin-bottom: 20px; display: block; }
+  .benefit-card h3 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 400; margin-bottom: 12px; }
+  .benefit-card p { font-size: 0.85rem; line-height: 1.7; color: var(--muted); }
+  .benefit-check {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 0.8rem;
+    margin-bottom: 16px;
+  }
+
+  /* ── PRODUCT GALLERY (MASONRY) ── */
+  #gallery { background: var(--blush); }
+  .masonry-grid {
+    columns: 4; column-gap: 12px;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .masonry-item {
+    break-inside: avoid; margin-bottom: 12px;
+    cursor: pointer; overflow: hidden; position: relative;
+    border: 1px solid rgba(184,150,90,0.1);
+  }
+  .masonry-item img { width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; inset: 0; }
+  .masonry-item .gallery-ph {
+    width: 100%;
+    background: linear-gradient(160deg, var(--nude), var(--blush-deep));
+    display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px;
+    transition: transform 0.5s;
+  }
+  .masonry-item:hover .gallery-ph { transform: scale(1.04); }
+  .masonry-item:nth-child(1) .gallery-ph { aspect-ratio: 3/4; }
+  .masonry-item:nth-child(2) .gallery-ph { aspect-ratio: 4/5; }
+  .masonry-item:nth-child(3) .gallery-ph { aspect-ratio: 1; }
+  .masonry-item:nth-child(4) .gallery-ph { aspect-ratio: 3/4; }
+  .masonry-item:nth-child(5) .gallery-ph { aspect-ratio: 4/3; }
+  .masonry-item:nth-child(6) .gallery-ph { aspect-ratio: 5/6; }
+  .masonry-item:nth-child(7) .gallery-ph { aspect-ratio: 3/4; }
+  .masonry-item:nth-child(8) .gallery-ph { aspect-ratio: 1; }
+  .masonry-item .hover-overlay {
+    position: absolute; inset: 0;
+    background: rgba(42,32,32,0.35);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .masonry-item:hover .hover-overlay { opacity: 1; }
+  .hover-overlay span { color: var(--white); font-size: 1.4rem; }
+
+  /* ── BEFORE & AFTER ── */
+  #before-after { background: var(--white); }
+  .ba-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 1100px; margin: 0 auto; }
+  .ba-card { border: 1px solid rgba(184,150,90,0.15); overflow: hidden; }
+  .ba-images { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--gold-light); }
+  .ba-img {
+    aspect-ratio: 3/4;
+    background: linear-gradient(160deg, var(--blush), var(--nude));
+    display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px;
+    position: relative;
+  }
+  .ba-img img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+  .ba-label {
+    position: absolute; bottom: 8px; left: 8px;
+    font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
+    background: var(--charcoal); color: var(--white);
+    padding: 3px 8px;
+  }
+  .ba-footer { padding: 16px 20px; background: var(--white); }
+  .ba-footer p { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
+
+  /* ── HOW TO USE ── */
+  #how-to { background: var(--cream); }
+  .steps-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; max-width: 1100px; margin: 0 auto; align-items: center; }
+  .steps-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .step-img {
+    aspect-ratio: 1;
+    background: linear-gradient(160deg, var(--blush-deep), var(--nude));
+    border: 1px solid rgba(184,150,90,0.2);
+    display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px;
+    position: relative;
+  }
+  .step-img:first-child { grid-column: span 2; aspect-ratio: 2/1; }
+  .step-img img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+  .steps-list { display: flex; flex-direction: column; gap: 40px; }
+  .step-item { display: flex; gap: 24px; align-items: flex-start; }
+  .step-num {
+    flex-shrink: 0;
+    width: 48px; height: 48px;
+    border: 1px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-size: 1.3rem; color: var(--gold);
+  }
+  .step-item h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; margin-bottom: 8px; }
+  .step-item p { font-size: 0.85rem; line-height: 1.8; color: var(--muted); }
+
+  /* ── INGREDIENTS ── */
+  #ingredients { background: var(--charcoal); }
+  #ingredients .eyebrow { color: var(--gold-light); }
+  #ingredients .section-title { color: var(--white); }
+  #ingredients .gold-line { background: linear-gradient(90deg, var(--gold-light), transparent); }
+  .ingredients-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; max-width: 1200px; margin: 0 auto; }
+  .ingredient-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(184,150,90,0.2);
+    overflow: hidden; position: relative;
+    transition: background 0.3s;
+  }
+  .ingredient-card:hover { background: rgba(255,255,255,0.08); }
+  .ing-img {
+    aspect-ratio: 4/3;
+    background: linear-gradient(160deg, rgba(200,160,160,0.2), rgba(184,150,90,0.1));
+    display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px;
+    position: relative;
+  }
+  .ing-img img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+  .ing-content { padding: 24px 20px; }
+  .ing-content h3 { font-family: var(--font-display); font-size: 1.3rem; color: var(--white); margin-bottom: 8px; font-weight: 400; }
+  .ing-content p { font-size: 0.8rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
+
+  /* ── CUSTOMER RESULTS ── */
+  #results { background: var(--blush); }
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 1100px; margin: 0 auto;
+  }
+  .result-img {
+    aspect-ratio: 1;
+    background: linear-gradient(160deg, var(--nude), var(--blush-deep));
+    border: 1px solid rgba(184,150,90,0.15);
+    display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px;
+    cursor: pointer; overflow: hidden; position: relative;
+    transition: transform 0.3s;
+  }
+  .result-img:hover { transform: scale(1.03); }
+  .result-img img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+
+  /* ── TESTIMONIALS ── */
+  #testimonials { background: var(--white); }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1100px; margin: 0 auto; }
+  .testimonial-card {
+    padding: 36px;
+    border: 1px solid rgba(184,150,90,0.15);
+    background: var(--cream);
+    position: relative;
+  }
+  .testimonial-card::before {
+    content: '"';
+    font-family: var(--font-display); font-size: 6rem; font-weight: 300;
+    color: var(--rose-light);
+    position: absolute; top: 10px; left: 28px;
+    line-height: 1;
+  }
+  .stars { color: var(--gold); letter-spacing: 4px; font-size: 0.85rem; margin-bottom: 20px; margin-top: 40px; }
+  .review-text { font-size: 0.9rem; line-height: 1.9; color: var(--charcoal); margin-bottom: 24px; font-weight: 300; }
+  .reviewer { display: flex; align-items: center; gap: 14px; }
+  .reviewer-photo {
+    width: 48px; height: 48px;
+    background: linear-gradient(135deg, var(--rose), var(--blush-deep));
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 3px;
+    overflow: hidden; flex-shrink: 0; position: relative;
+  }
+  .reviewer-photo img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; border-radius: 50%; }
+  .reviewer-name { font-weight: 500; font-size: 0.85rem; }
+  .reviewer-tag { font-size: 0.7rem; color: var(--muted); }
+
+  /* ── INSTAGRAM ── */
+  #instagram { background: var(--cream); }
+  .insta-header { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; margin: 0 auto 48px; }
+  .insta-handle { font-family: var(--font-display); font-size: 1.8rem; font-weight: 400; }
+  .insta-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; max-width: 1100px; margin: 0 auto; }
+  .insta-item {
+    aspect-ratio: 1;
+    background: linear-gradient(160deg, var(--blush), var(--nude));
+    border: 1px solid rgba(184,150,90,0.1);
+    cursor: pointer; overflow: hidden; position: relative;
+  }
+  .insta-item img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+  .insta-item .insta-hover {
+    position: absolute; inset: 0;
+    background: rgba(184,150,90,0.7);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 0.3s;
+    font-size: 1.5rem;
+  }
+  .insta-item:hover .insta-hover { opacity: 1; }
+
+  /* ── FAQ ── */
+  #faq { background: var(--white); }
+  .faq-container { max-width: 750px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid rgba(184,150,90,0.2); }
+  .faq-q {
+    padding: 24px 0;
+    display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer;
+    font-family: var(--font-display); font-size: 1.15rem; font-weight: 400;
+    user-select: none;
+  }
+  .faq-q .faq-icon { font-size: 1rem; color: var(--gold); transition: transform 0.3s; flex-shrink: 0; margin-left: 16px; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .faq-a-inner { padding-bottom: 24px; font-size: 0.88rem; line-height: 1.9; color: var(--muted); }
+
+  /* ── FINAL CTA ── */
+  #cta {
+    background: linear-gradient(135deg, var(--charcoal) 0%, #3d2828 100%);
+    text-align: center;
+    padding: 120px 5%;
+    position: relative; overflow: hidden;
+  }
+  #cta::before {
+    content: '';
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 600px; height: 600px; border-radius: 50%;
+    border: 1px solid rgba(184,150,90,0.15);
+  }
+  #cta::after {
+    content: '';
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 900px; height: 900px; border-radius: 50%;
+    border: 1px solid rgba(184,150,90,0.08);
+  }
+  .cta-content { position: relative; z-index: 1; }
+  .cta-content .eyebrow { color: var(--gold-light); margin-bottom: 24px; }
+  .cta-content h2 { font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 300; color: var(--white); margin-bottom: 20px; line-height: 1.1; }
+  .cta-content h2 em { font-style: italic; color: var(--gold-light); }
+  .cta-content p { color: rgba(255,255,255,0.6); font-size: 1rem; font-weight: 300; margin-bottom: 48px; max-width: 500px; margin-left: auto; margin-right: auto; }
+  .btn-gold {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 20px 48px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--white);
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    transition: all 0.35s;
+    box-shadow: 0 8px 32px rgba(184,150,90,0.4);
+  }
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 16px 48px rgba(184,150,90,0.5); }
+  .btn-gold svg { width: 20px; height: 20px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal);
+    padding: 60px 5% 32px;
+    color: rgba(255,255,255,0.5);
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+  .footer-brand .nav-logo { display: block; color: var(--white); margin-bottom: 16px; }
+  .footer-brand p { font-size: 0.82rem; line-height: 1.8; max-width: 260px; }
+  .footer-col h4 { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 20px; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .footer-col ul li a { font-size: 0.82rem; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--gold-light); }
+  .social-links { display: flex; gap: 16px; margin-top: 24px; }
+  .social-link {
+    width: 38px; height: 38px;
+    border: 1px solid rgba(184,150,90,0.3);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold-light); text-decoration: none; font-size: 0.9rem;
+    transition: all 0.3s;
+  }
+  .social-link:hover { background: var(--gold); border-color: var(--gold); color: var(--white); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 28px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 12px;
+  }
+  .footer-bottom p { font-size: 0.75rem; }
+
+  /* ── FLOATING WA ── */
+  .wa-float {
+    position: fixed; bottom: 30px; right: 28px; z-index: 999;
+    width: 58px; height: 58px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+    transition: transform 0.3s;
+  }
+  .wa-float:hover { transform: scale(1.12); }
+  .wa-float svg { width: 28px; height: 28px; fill: white; }
+  .wa-tooltip {
+    position: absolute; right: 70px; bottom: 50%; transform: translateY(50%);
+    background: var(--charcoal); color: var(--white);
+    font-size: 0.7rem; letter-spacing: 0.06em;
+    padding: 6px 12px; white-space: nowrap;
+    opacity: 0; transition: opacity 0.3s; pointer-events: none;
+  }
+  .wa-float:hover .wa-tooltip { opacity: 1; }
+
+  /* ── LIGHTBOX ── */
+  .lightbox {
+    display: none;
+    position: fixed; inset: 0; z-index: 9999;
+    background: rgba(0,0,0,0.9);
+    align-items: center; justify-content: center;
+    flex-direction: column;
+  }
+  .lightbox.active { display: flex; }
+  .lightbox-img {
+    max-width: 90vw; max-height: 80vh;
+    background: var(--nude);
+    display: flex; align-items: center; justify-content: center;
+    min-width: 300px; min-height: 300px;
+  }
+  .lightbox-img img { max-width: 100%; max-height: 80vh; object-fit: contain; }
+  .lightbox-close {
+    position: absolute; top: 24px; right: 28px;
+    font-size: 2rem; color: var(--white); cursor: pointer;
+    background: none; border: none; font-family: var(--font-display);
+    opacity: 0.7; transition: opacity 0.2s;
+  }
+  .lightbox-close:hover { opacity: 1; }
+
+  /* ── PLACEHOLDER STYLES ── */
+  .ph-label { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(120,90,90,0.5); text-align: center; padding: 16px; }
+  .ph-icon { font-size: 1.6rem; opacity: 0.25; }
+
+  /* ── SCROLL ANIMATIONS ── */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    #hero { grid-template-columns: 1fr; padding-top: 70px; }
+    .hero-image-side { padding: 0 8% 60px; }
+    .hero-img-float { display: none; }
+    .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .ingredients-grid { grid-template-columns: repeat(2, 1fr); }
+    .results-grid { grid-template-columns: repeat(3, 1fr); }
+    .insta-grid { grid-template-columns: repeat(4, 1fr); }
+    .masonry-grid { columns: 2; }
+    .featured-grid { grid-template-columns: 1fr 1fr; }
+    .feat-main { grid-row: span 1; grid-column: span 2; aspect-ratio: 16/9; }
+    .ba-grid { grid-template-columns: 1fr; }
+    .steps-layout { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .nav-links.open {
+      display: flex; flex-direction: column; gap: 24px;
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--cream); z-index: 200;
+      align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 600px) {
+    .benefits-grid { grid-template-columns: 1fr; }
+    .ingredients-grid { grid-template-columns: 1fr 1fr; }
+    .results-grid { grid-template-columns: repeat(2, 1fr); }
+    .insta-grid { grid-template-columns: repeat(3, 1fr); }
+    .hero-stats { flex-wrap: wrap; gap: 24px; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">Rana<span>'s</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#benefits">Benefits</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#ingredients">Ingredients</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="https://wa.me/+201068475047?text=Hello%2C+I+would+like+to+order+Rana%27s+Nail+Serum." class="nav-cta" target="_blank">Order Now</a>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content reveal">
+    <span class="eyebrow">Premium Nail Care · Est. 2024</span>
+    <h1 class="hero-headline">Stronger,<br><em>Healthier</em><br>Nails Start Here</h1>
+    <p class="hero-sub">Transform your nails with our premium nail serum designed to nourish, strengthen, and restore — naturally.</p>
+    <div class="hero-buttons">
+      <a href="https://wa.me/+201068475047?text=Hello%2C+I+would+like+to+order+Rana%27s+Nail+Serum." class="btn-primary" target="_blank">Order Now</a>
+      <a href="#benefits" class="btn-secondary">Learn More</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>99%</strong><span>Satisfaction Rate</span></div>
+      <div class="stat"><strong>1-4 Weeks</strong><span>Visible Results</span></div>
+      <div class="stat"><strong>100%</strong><span>Natural Formula</span></div>
+    </div>
+  </div>
+  <div class="hero-image-side reveal reveal-delay-2">
+    <div class="hero-img-main">
+      <!-- REPLACE: Hero product main image -->
+      <span class="ph-icon">📸</span>
+      <span class="ph-label">Hero Product Image<br><img src="New folder (2)/main.png"></span>
+    </div>
+    <!-- <div class="hero-img-float f1">
+      <span class="ph-label"><br><img src="New folder (2)/life.jpeg"></span>
+    </div> -->
+    <!-- <div class="hero-img-float f2">
+      <span class="ph-icon" style="font-size:1rem">📸</span>
+      <span class="ph-label">Detail Shot</span>
+    </div> -->
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-inner">
+    <span>Stronger Nails</span><span class="dot">✦</span>
+    <span>Natural Formula</span><span class="dot">✦</span>
+    <span>Deep Nourishment</span><span class="dot">✦</span>
+    <span>Healthy Growth</span><span class="dot">✦</span>
+    <span>Natural Shine</span><span class="dot">✦</span>
+    <span>Rana's Nail Serum</span><span class="dot">✦</span>
+    <span>Stronger Nails</span><span class="dot">✦</span>
+    <span>Natural Formula</span><span class="dot">✦</span>
+    <span>Deep Nourishment</span><span class="dot">✦</span>
+    <span>Healthy Growth</span><span class="dot">✦</span>
+    <span>Natural Shine</span><span class="dot">✦</span>
+    <span>Rana's Nail Serum</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- FEATURED IMAGE GRID -->
+<section id="featured">
+  <div class="section-header reveal">
+    <span class="eyebrow">Rana's Collection</span>
+    <div class="gold-line"></div>
+    <h2 class="section-title">Elegance in Every Drop</h2>
+  </div>
+  <div class="featured-grid reveal">
+    <div class="feat-img feat-main" onclick="openLightbox(this)">
+      <div class="feat-overlay"></div>
+      <!-- REPLACE: Large featured product image -->
+      <span class="ph-icon">📸</span>
+      <span class="ph-label">Main Featured Image<br><img src="New folder (2)/lifesty2.jpeg"></span>
+    </div>
+    <div class="feat-img" onclick="openLightbox(this)">
+      <div class="feat-overlay"></div>
+      <!-- REPLACE: Lifestyle shot -->
+      <span class="ph-icon">📸</span>
+      <span class="ph-label">Lifestyle Shot<br><img src="New folder (2)/hero.jpeg"></span>
+    </div>
+    <!-- <div class="feat-img" onclick="openLightbox(this)">
+      <div class="feat-overlay"></div>
+      <span class="ph-icon">📸</span>
+      <span class="ph-label">Packaging Detail</span>
+    </div> -->
+    <div class="feat-img" onclick="openLightbox(this)">
+      <div class="feat-overlay"></div>
+      <!-- REPLACE: Close-up shot -->
+      <span class="ph-icon">📸</span>
+      <span class="ph-label">Close-Up Shot<br><img src="New folder (2)/close.jpeg"></span>
+    </div>
+    <div class="feat-img" onclick="openLightbox(this)">
+      <div class="feat-overlay"></div>
+      <span class="ph-icon">📸</span>
+      <span class="ph-label">Customer Photo<br><img src="New folder (2)/Customer.jpeg"></span>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section id="benefits">
+  <div class="section-header reveal">
+    <span class="eyebrow">Why Rana's</span>
+    <div class="gold-line"></div>
+    <h2 class="section-title">Designed for Your Best Nails</h2>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit-card reveal reveal-delay-1">
+      <span class="benefit-check">✓</span>
+      <span class="benefit-icon">💪</span>
+      <h3>Strengthens Nails</h3>
+      <p>Our advanced formula reinforces the nail structure from within, reducing breakage and brittleness for visibly stronger nails.</p>
+    </div>
+    <div class="benefit-card reveal reveal-delay-2">
+      <span class="benefit-check">✓</span>
+      <span class="benefit-icon">🌱</span>
+      <h3>Promotes Healthy Growth</h3>
+      <p>Stimulates the nail matrix with botanical actives that encourage faster, healthier nail growth cycle after cycle.</p>
+    </div>
+    <div class="benefit-card reveal reveal-delay-3">
+      <span class="benefit-check">✓</span>
+      <span class="benefit-icon">💧</span>
+      <h3>Deep Nourishment</h3>
+      <p>Rich in vitamins and essential oils that penetrate deeply to hydrate the nail and cuticle, restoring softness and flexibility.</p>
+    </div>
+    <div class="benefit-card reveal reveal-delay-4">
+      <span class="benefit-check">✓</span>
+      <span class="benefit-icon">✨</span>
+      <h3>Natural Shine</h3>
+      <p>Leaves nails with a luminous, healthy glow — no polish needed. A natural radiance that speaks for itself.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT GALLERY (MASONRY) -->
+<!-- <section id="gallery">
+  <div class="section-header reveal">
+    <span class="eyebrow">Product Gallery</span>
+    <div class="gold-line"></div>
+    <h2 class="section-title">Captured Beauty</h2>
+  </div>
+  <div class="masonry-grid reveal">
+    <div class="masonry-item" onclick="openLightbox(this)">
+      <div class="gallery-ph"><span class="ph-icon">📸</span><span class="ph-label">Gallery Photo 1</span></div>
+      <div class="hover-overlay"><span>+</span></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(this)">
+      <div class="gallery-ph"><span class="ph-icon">📸</span><span class="ph-label">Gallery Photo 2</span></div>
+      <div class="hover-overlay"><span>+</span></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(this)">
+      <div class="gallery-ph"><span class="ph-icon">📸</span><span class="ph-label">Gallery Photo 3</span></div>
+      <div class="hover-overlay"><span>+</span></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(this)">
+      <div class="gallery-ph"><span class="ph-icon">📸</span><span class="ph-label">Gallery Photo 4</span></div>
+      <div class="hover-overlay"><span>+</span></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(this)">
+      <div class="gallery-ph"><span class="ph-icon">📸</span><span class="ph-label">Gallery Photo 5</span></div>
+      <div class="hover-overlay"><span>+</span></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(this)">
+      <div class="gallery-ph"><span class="ph-icon">📸</span><span class="ph-label">Gallery Photo 6</span></div>
+      <div class="hover-overlay"><span>+</span></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(this)">
+      <div class="gallery-ph"><span class="ph-icon">📸</span><span class="ph-label">Gallery Photo 7</span></div>
+      <div class="hover-overlay"><span>+</span></div>
+    </div>
+    <div class="masonry-item" onclick="openLightbox(this)">
+      <div class="gallery-ph"><span class="ph-icon">📸</span><span class="ph-label">Gallery Photo 8</span></div>
+      <div class="hover-overlay"><span>+</span></div>
+    </div>
+  </div>
+</section> -->
+
+<!-- BEFORE & AFTER -->
+<!-- <section id="before-after">
+  <div class="section-header reveal">
+    <span class="eyebrow">Real Results</span>
+    <div class="gold-line"></div>
+    <h2 class="section-title">The Transformation Is Real</h2>
+  </div>
+  <div class="ba-grid reveal">
+    <div class="ba-card">
+      <div class="ba-images">
+        <div class="ba-img">
+          <span class="ph-icon">📸</span>
+          <span class="ph-label">Before</span>
+          <span class="ba-label">Before</span>
+        </div>
+        <div class="ba-img">
+          <span class="ph-icon">📸</span>
+          <span class="ph-label">After</span>
+          <span class="ba-label">After</span>
+        </div>
+      </div>
+      <div class="ba-footer"><p>4 weeks of daily use — visible strengthening and shine</p></div>
+    </div>
+    <div class="ba-card">
+      <div class="ba-images">
+        <div class="ba-img">
+          <span class="ph-icon">📸</span>
+          <span class="ph-label">Before</span>
+          <span class="ba-label">Before</span>
+        </div>
+        <div class="ba-img">
+          <span class="ph-icon">📸</span>
+          <span class="ph-label">After</span>
+          <span class="ba-label">After</span>
+        </div>
+      </div>
+      <div class="ba-footer"><p>Cuticle and nail restoration in just 3 weeks</p></div>
+    </div>
+    <div class="ba-card">
+      <div class="ba-images">
+        <div class="ba-img">
+          <span class="ph-icon">📸</span>
+          <span class="ph-label">Before</span>
+          <span class="ba-label">Before</span>
+        </div>
+        <div class="ba-img">
+          <span class="ph-icon">📸</span>
+          <span class="ph-label">After</span>
+          <span class="ba-label">After</span>
+        </div>
+      </div>
+      <div class="ba-footer"><p>Brittle nails transformed — natural growth improved</p></div>
+    </div>
+  </div>
+</section> -->
+
+<!-- HOW TO USE -->
+<section id="how-to">
+  <div class="section-header reveal">
+    <h2 class="section-title">Simple. Consistent. Effective.</h2>
+  </div>
+  <div class="steps-layout">
+    <div class="steps-visual reveal">
+      <div class="step-img">
+        <img src="New folder (2)/app.jpeg"></span>
+        <span class="ph-icon">📸</span>
+        <span class="ph-label">Application Photo</span>
+      </div>
+      <div class="step-img">
+       <img src="New folder (2)/step.jpeg"></span>
+        <span class="ph-icon">📸</span>
+        <span class="ph-label">Step Detail</span>
+      </div>
+      <div class="step-img">
+        <img src="New folder (2)/resualt.jpeg"></span>
+        <span class="ph-icon">📸</span>
+        <span class="ph-label">Result Photo</span>
+      </div>
+    </div>
+    <div class="steps-list reveal reveal-delay-2">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div>
+          <h3>Apply Serum</h3>
+          <p>Using the precision applicator, apply a small amount of serum directly onto each nail, covering the nail plate and cuticle area evenly.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div>
+          <h3>Massage Gently</h3>
+          <p>Using your fingertip, massage the serum in small circular motions for 30–60 seconds. This stimulates blood flow and helps absorption.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div>
+          <h3>Use Daily</h3>
+          <p>For best results, apply morning and night. Consistent daily use is the key to visible transformation within 2–4 weeks.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INGREDIENTS -->
+<section id="ingredients">
+  <div class="section-header reveal">
+    <span class="eyebrow">The Formula</span>
+    <div class="gold-line"></div>
+    <h2 class="section-title">Powered by Nature</h2>
+  </div>
+  <div class="ingredients-grid reveal">
+    <div class="ingredient-card">
+      <div class="ing-img">
+        <!-- REPLACE: Natural oils image -->
+                  <img src="images (2).jfif">
+
+        <span class="ph-icon" style="opacity:0.4;font-size:2rem">🌿</span>
+        <span class="ph-label" style="color:rgba(255,255,255,0.3)">Natural Oils Photo</span>
+      </div>
+      <div class="ing-content">
+        <h3>Natural Oils</h3>
+        <p>A blend of argan, jojoba, and sweet almond oil deeply hydrates and conditions the nail and surrounding skin.</p>
+      </div>
+    </div>
+    <div class="ingredient-card">
+      <div class="ing-img">
+        <!-- REPLACE: Vitamin E image -->
+         <img src="images (1).jfif">
+        <span class="ph-icon" style="opacity:0.4;font-size:2rem">💊</span>
+        <span class="ph-label" style="color:rgba(255,255,255,0.3)">Vitamin E Photo</span>
+      </div>
+      <div class="ing-content">
+        <h3>Vitamin E</h3>
+        <p>A powerful antioxidant that protects the nail from environmental damage while promoting cell renewal and health.</p>
+      </div>
+    </div>
+    <div class="ingredient-card">
+      <div class="ing-img">
+        <!-- REPLACE: Keratin image -->
+           <img src="images.jfif">
+        <span class="ph-icon" style="opacity:0.4;font-size:2rem">💪</span>
+        <span class="ph-label" style="color:rgba(255,255,255,0.3)">Keratin Photo</span>
+      </div>
+      <div class="ing-content">
+        <h3>Keratin Support</h3>
+        <p>Hydrolyzed keratin proteins reinforce the natural structure of the nail, reducing breakage and building resilience.</p>
+      </div>
+    </div>
+    <div class="ingredient-card">
+      <div class="ing-img">
+        <!-- REPLACE: Botanical image -->
+         <img src="images (3).jfif">
+        <span class="ph-icon" style="opacity:0.4;font-size:2rem">🌸</span>
+        <span class="ph-label" style="color:rgba(255,255,255,0.3)">Botanicals Photo</span>
+      </div>
+      <div class="ing-content">
+        <h3>Botanical Extracts</h3>
+        <p>Chamomile, green tea, and rosehip extracts soothe, brighten, and nourish for long-term nail vitality.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOMER RESULTS -->
+<!-- <section id="results">
+  <div class="section-header reveal">
+    <span class="eyebrow">Community</span>
+    <div class="gold-line"></div>
+    <h2 class="section-title">Real People. Real Results.</h2>
+  </div>
+  <div class="results-grid reveal">
+    <div class="result-img" onclick="openLightbox(this)"><span class="ph-icon">📸</span><span class="ph-label">Customer Result 1</span></div>
+    <div class="result-img" onclick="openLightbox(this)"><span class="ph-icon">📸</span><span class="ph-label">Customer Result 2</span></div>
+    <div class="result-img" onclick="openLightbox(this)"><span class="ph-icon">📸</span><span class="ph-label">Customer Result 3</span></div>
+    <div class="result-img" onclick="openLightbox(this)"><span class="ph-icon">📸</span><span class="ph-label">Customer Result 4</span></div>
+    <div class="result-img" onclick="openLightbox(this)"><span class="ph-icon">📸</span><span class="ph-label">Customer Result 5</span></div>
+    <div class="result-img" onclick="openLightbox(this)"><span class="ph-icon">📸</span><span class="ph-label">Customer Result 6</span></div>
+    <div class="result-img" onclick="openLightbox(this)"><span class="ph-icon">📸</span><span class="ph-label">Customer Result 7</span></div>
+    <div class="result-img" onclick="openLightbox(this)"><span class="ph-icon">📸</span><span class="ph-label">Customer Result 8</span></div>
+    <div class="result-img" onclick="openLightbox(this)"><span class="ph-icon">📸</span><span class="ph-label">Customer Result 9</span></div>
+    <div class="result-img" onclick="openLightbox(this)"><span class="ph-icon">📸</span><span class="ph-label">Customer Result 10</span></div>
+    <div class="result-img" onclick="openLightbox(this)"><span class="ph-icon">📸</span><span class="ph-label">Customer Result 11</span></div>
+    <div class="result-img" onclick="openLightbox(this)"><span class="ph-icon">📸</span><span class="ph-label">Customer Result 12</span></div>
+  </div>
+</section> -->
+
+<!-- TESTIMONIALS -->
+<!-- <section id="testimonials">
+  <div class="section-header reveal">
+    <span class="eyebrow">Reviews</span>
+    <div class="gold-line"></div>
+    <h2 class="section-title">What Our Customers Say</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal reveal-delay-1">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">I've tried so many nail serums but nothing compares to Rana's. Within 3 weeks my nails stopped breaking completely and started growing so fast. I'm genuinely obsessed.</p>
+      <div class="reviewer">
+        <div class="reviewer-photo">
+
+          <span style="font-size:1.2rem">👩</span>
+        </div>
+        <div>
+          <div class="reviewer-name">Sarah M.</div>
+          <div class="reviewer-tag">Verified Customer · Cairo</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-2">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">My nails were always so dry and brittle. After 4 weeks with this serum, they're stronger than they've ever been. The shine alone is worth it. 100% recommend.</p>
+      <div class="reviewer">
+        <div class="reviewer-photo">
+
+          <span style="font-size:1.2rem">👩</span>
+        </div>
+        <div>
+          <div class="reviewer-name">Nour A.</div>
+          <div class="reviewer-tag">Verified Customer · Alexandria</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-3">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Fast delivery and the product is exactly as described. My cuticles are soft and my nails grow so much faster now. This is my new essential every morning and night.</p>
+      <div class="reviewer">
+        <div class="reviewer-photo">
+
+          <span style="font-size:1.2rem">👩</span>
+        </div>
+        <div>
+          <div class="reviewer-name">Hana R.</div>
+          <div class="reviewer-tag">Verified Customer · Giza</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- <section id="instagram">
+  <div class="insta-header reveal">
+    <div>
+      <span class="eyebrow">Follow Along</span>
+      <div class="insta-handle">@ranas.nailserum</div>
+    </div>
+    <a href="#" class="btn-secondary" style="white-space:nowrap">Follow on Instagram</a>
+  </div>
+  <div class="insta-grid reveal">
+    <div class="insta-item" onclick="openLightbox(this)">
+      
+      
+      <span class="ph-icon" style="position:relative;z-index:1">📸</span>
+      <div class="insta-hover">♡</div>
+    </div>
+    <div class="insta-item" onclick="openLightbox(this)">
+
+
+     <span class="ph-icon" style="position:relative;z-index:1">📸</span>
+      <div class="insta-hover">♡</div>
+    </div>
+    <div class="insta-item" onclick="openLightbox(this)">
+
+      <span class="ph-icon" style="position:relative;z-index:1">📸</span>
+      <div class="insta-hover">♡</div>
+    </div>
+    <div class="insta-item" onclick="openLightbox(this)">
+
+      <span class="ph-icon" style="position:relative;z-index:1">📸</span>
+      <div class="insta-hover">♡</div>
+    </div>
+    <div class="insta-item" onclick="openLightbox(this)">
+
+      <span class="ph-icon" style="position:relative;z-index:1">📸</span>
+      <div class="insta-hover">♡</div>
+    </div>
+    <div class="insta-item" onclick="openLightbox(this)">
+
+      <span class="ph-icon" style="position:relative;z-index:1">📸</span>
+      <div class="insta-hover">♡</div>
+    </div>
+    <div class="insta-item" onclick="openLightbox(this)">
+
+      <span class="ph-icon" style="position:relative;z-index:1">📸</span>
+      <div class="insta-hover">♡</div>
+    </div>
+    <div class="insta-item" onclick="openLightbox(this)">
+
+      <span class="ph-icon" style="position:relative;z-index:1">📸</span>
+      <div class="insta-hover">♡</div>
+    </div>
+    <div class="insta-item" onclick="openLightbox(this)">
+
+      <span class="ph-icon" style="position:relative;z-index:1">📸</span>
+      <div class="insta-hover">♡</div>
+    </div>
+    <div class="insta-item" onclick="openLightbox(this)">
+
+      <span class="ph-icon" style="position:relative;z-index:1">📸</span>
+      <div class="insta-hover">♡</div>
+    </div>
+    <div class="insta-item" onclick="openLightbox(this)">
+
+      <span class="ph-icon" style="position:relative;z-index:1">📸</span>
+      <div class="insta-hover">♡</div>
+    </div>
+    <div class="insta-item" onclick="openLightbox(this)">
+
+      <span class="ph-icon" style="position:relative;z-index:1">📸</span>
+      <div class="insta-hover">♡</div>
+    </div>
+  </div>
+</section> -->
+
+<!-- FAQ -->
+<section id="faq" style="background: var(--white);">
+  <div class="section-header reveal">
+    <span class="eyebrow">Questions</span>
+    <div class="gold-line"></div>
+    <h2 class="section-title">Frequently Asked</h2>
+  </div>
+  <div class="faq-container reveal">
+    <div class="faq-item">
+      <div class="faq-q">How soon will I see results? <span class="faq-icon">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">Most customers notice visible improvement in nail strength and hydration within 2 weeks of consistent daily use. For full results — including faster growth and natural shine — allow 4 to 6 weeks.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I apply the serum? <span class="faq-icon">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">Apply a small drop to each nail using the precision applicator. Massage gently for 30–60 seconds, focusing on the nail and cuticle. Best results come from morning and nighttime application.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is it safe for sensitive skin? <span class="faq-icon">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">Yes. Rana's Nail Serum is formulated with gentle, natural ingredients suitable for all skin types including sensitive skin. It is free from harsh chemicals, parabens, and artificial fragrances.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I use it with nail polish? <span class="faq-icon">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">Absolutely. Apply the serum on bare nails and allow 5 minutes to absorb before applying polish. For best results, use it overnight without polish so ingredients can fully penetrate.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I order? <span class="faq-icon">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">Orders are placed directly via WhatsApp. Click the "Order Now" button or message us on WhatsApp and our team will assist you with your order, shipping options, and payment within minutes.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do you ship outside Egypt? <span class="faq-icon">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">Currently we ship across Egypt with fast delivery. For international shipping enquiries, please contact us directly via WhatsApp and we'll do our best to accommodate you.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="cta">
+  <div class="cta-content reveal">
+    <span class="eyebrow">Limited Stock Available</span>
+    <h2>Ready For <em>Stronger,</em><br>Healthier Nails?</h2>
+    <p>Join thousands of customers who transformed their nails with Rana's premium nail serum. Order now and see the difference in weeks.</p>
+    <a href="https://wa.me/+201068475047?text=Hello%2C+I+would+like+to+order+Rana%27s+Nail+Serum." class="btn-gold" target="_blank">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Order Now on WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo">Rana<span>'s</span></a>
+      <p>Premium nail care crafted with natural ingredients and a dedication to visible results. Your nails deserve the best.</p>
+     
+    </div>
+    
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="https://wa.me/+201068475047?text=Hello%2C+I+would+like+to+order+Rana%27s+Nail+Serum." target="_blank">WhatsApp</a></li>
+        
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Rana's Nail Serum. All rights reserved.</p>
+    <p>Made with love in Egypt 🇪🇬</p>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/+201068475047?text=Hello%2C+I+would+like+to+order+Rana%27s+Nail+Serum." class="wa-float" target="_blank" aria-label="Order on WhatsApp">
+  <span class="wa-tooltip">Order on WhatsApp</span>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">×</button>
+  <div class="lightbox-img" id="lightboxImg">
+    <span style="font-size:3rem;opacity:0.3">📸</span>
+  </div>
+</div>
+
+<script>
+  // Navbar scroll
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const a = item.querySelector('.faq-a');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // Lightbox
+  function openLightbox(el) {
+    const img = el.querySelector('img');
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    lb.classList.add('active');
+    if (img) {
+      lbImg.innerHTML = '';
+      const newImg = document.createElement('img');
+      newImg.src = img.src;
+      lbImg.appendChild(newImg);
+    } else {
+      lbImg.innerHTML = '<span style="font-size:3rem;opacity:0.3;padding:60px;">📸</span>';
+    }
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+  }
+  document.getElementById('lightbox').addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+</body>
+</html>
